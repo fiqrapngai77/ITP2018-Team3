@@ -24,5 +24,7 @@ for file in glob.glob("*"):
             print file + " : "+ str(im.size) + " : " +str(count)
 
         
-        
+'''
+Try to remove to bigger or smaller files
+'''
       
