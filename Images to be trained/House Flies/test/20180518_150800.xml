@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>20180518_150800.jpg</filename>
+	<path>C:\tensorflow2\models\research\object_detection\images\test\20180518_150800.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>931</width>
+		<height>698</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fly</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>96</xmin>
+			<ymin>124</ymin>
+			<xmax>297</xmax>
+			<ymax>240</ymax>
+		</bndbox>
+	</object>
+</annotation>
