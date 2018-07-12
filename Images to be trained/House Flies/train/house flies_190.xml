@@ -1,0 +1,26 @@
+<annotation>
+	<folder>house flies</folder>
+	<filename>house flies_190.jpg</filename>
+	<path>C:\Users\Rapngai\Desktop\ChromeDriver\house flies\house flies_190.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fly</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>253</xmin>
+			<ymin>180</ymin>
+			<xmax>546</xmax>
+			<ymax>386</ymax>
+		</bndbox>
+	</object>
+</annotation>
