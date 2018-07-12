@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>image_part_002 (3).jpg</filename>
+	<path>C:\tensorflow2\models\research\object_detection\images\train\image_part_002 (3).jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2093</width>
+		<height>1194</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>house fly</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>676</xmin>
+			<ymin>1018</ymin>
+			<xmax>909</xmax>
+			<ymax>1161</ymax>
+		</bndbox>
+	</object>
+</annotation>
