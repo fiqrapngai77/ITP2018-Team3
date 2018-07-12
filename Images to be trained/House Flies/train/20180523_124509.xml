@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>20180523_124509.jpg</filename>
+	<path>C:\tensorflow2\models\research\object_detection\images\train\20180523_124509.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>931</width>
+		<height>698</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>40</xmin>
+			<ymin>166</ymin>
+			<xmax>104</xmax>
+			<ymax>238</ymax>
+		</bndbox>
+	</object>
+</annotation>

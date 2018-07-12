@@ -1,0 +1,50 @@
+<annotation>
+	<folder>train</folder>
+	<filename>20180523_125751 - Copy.jpg</filename>
+	<path>C:\tensorflow2\models\research\object_detection\images\train\20180523_125751 - Copy.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>698</width>
+		<height>931</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>230</xmin>
+			<ymin>610</ymin>
+			<xmax>288</xmax>
+			<ymax>653</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>91</xmin>
+			<ymin>41</ymin>
+			<xmax>152</xmax>
+			<ymax>85</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>300</xmin>
+			<ymin>416</ymin>
+			<xmax>384</xmax>
+			<ymax>478</ymax>
+		</bndbox>
+	</object>
+</annotation>
