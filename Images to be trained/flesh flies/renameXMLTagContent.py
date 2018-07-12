@@ -6,13 +6,17 @@ import os, glob
 
 #trainFormat
 
-OLD_FORMAT = "termite"
-
-NEW_FORMAT = "flying termite"
+##OLD_FORMAT = "termite"
+##
+##NEW_FORMAT = "flying termite"
 
 ##OLD_FORMAT = "fly"
 ##
 ##NEW_FORMAT = "house fly"
+
+OLD_FORMAT = "flesh flies"
+
+NEW_FORMAT = "flesh fly"
 
 
 '''Get Current directory'''
