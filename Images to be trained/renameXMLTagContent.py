@@ -14,10 +14,13 @@ import os, glob
 ##
 ##NEW_FORMAT = "house fly"
 
-OLD_FORMAT = "flesh flies"
+##OLD_FORMAT = "flesh flies"
+##
+##NEW_FORMAT = "flesh fly"
 
-NEW_FORMAT = "flesh fly"
+OLD_FORMAT = "green bottles flies"
 
+NEW_FORMAT = "green bottles fly"
 
 '''Get Current directory'''
 cwd = os.getcwd()
