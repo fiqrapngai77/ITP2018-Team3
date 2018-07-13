@@ -21,6 +21,7 @@ $currentPage = "Cameras";
     </head>
     
     <body>
+        <!--Navbar-->
         <?php
         include 'navbar.php';
         ?>
@@ -33,6 +34,7 @@ $currentPage = "Cameras";
                 <hr>
             </div>
             
+            <!--Table showing all the cameras-->
             <div class="row">
                 <table class="table table-hover">
                     <thead>
@@ -44,8 +46,8 @@ $currentPage = "Cameras";
                     </thead>
                     <tbody>
                       <?php
-                        $sql3 = "select * from cameradetails";
-                        $result = $conn->query($sql3);
+                        $cameraQuery = "SELECT * FROM cameradetails";
+                        $result = $conn->query($cameraQuery);
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while ($row = $result->fetch_assoc()) {
@@ -57,9 +59,11 @@ $currentPage = "Cameras";
 
                                     <?php $state = $row["state"]; 
                                     $cameraID = $row["cameraID"]?>
-                                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                    <td><button type="submit" name="camera" value="<?php echo $cameraID?>" id="<?php echo $cameraID?>" class="btn btn-success" <?php if($state == 1){echo "disabled='true'";}?>>Start</button></td>
-                                </form>
+                                    
+                                    <!--Button to start analysis-->
+                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                        <td><button type="submit" name="camera" value="<?php echo $cameraID?>" id="<?php echo $cameraID?>" class="btn btn-success" <?php if($state == 1){echo "disabled='true'";}?>>Start</button></td>
+                                    </form>
 
 
                                 </tr>

@@ -24,7 +24,7 @@ $currentPage = "Dashboard";
     </head>
     
     <body>
-         
+        <!--Navbar--> 
         <?php
         include 'navbar.php';
         ?>
@@ -43,8 +43,8 @@ $currentPage = "Dashboard";
                         <select name="name" class="form-control" style="width:auto;" onChange="this.form.submit()">
                             <option value="default">Select a company</option>
                             <?php
-                            $sql = "select distinct companyName from fliesdetail";
-                            $result = $conn->query($sql);
+                            $companyNameQuery = "SELECT DISTINCT companyName FROM fliesdetail";
+                            $result = $conn->query($companyNameQuery);
 
 
                             if ($result->num_rows > 0) {
@@ -63,6 +63,8 @@ $currentPage = "Dashboard";
                         </select>
                     </div>
                 </form>
+                
+                <!--Table to view the fly counts for the selected company-->
                 <table id="dashboardTable" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                       <tr>

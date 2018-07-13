@@ -14,15 +14,17 @@ if ($existResult->num_rows > 0){
 }
 
 
-$query = "INSERT INTO users (user, password, verifCode) VALUES ('$username','$password','$verifCode')" ;
+$query = "INSERT INTO users (user, password, verifCode, accountType) VALUES ('$username','$password','$verifCode','Normal')" ;
 $result = $conn->query($query);
 
+//If the entry is successful, it will redirect to Register page with a message
 if($result){
-    header("Location: index.php?registered=true");
+    header("Location: signup.php?registered=true");
 }else{
     header("Location: signup.php");
 }
 
+//Generates a random string for verification code
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);

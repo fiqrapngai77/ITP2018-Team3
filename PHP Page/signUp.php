@@ -2,7 +2,9 @@
     include 'dbConnection.php';
    
     if(isset($_GET['taken'])){
-        $takenMessage = "The username is already taken";
+        $message = "The username is already taken";
+    }else if(isset($_GET['registered'])){
+        $message = "User has been successfully registered";
     }
     
     if(!isset($_SESSION['currentUser'])){
@@ -26,55 +28,59 @@
     </head>
     
     <body>
-        
-            <?php
-            include 'navbar.php';
-            ?>
-        
+        <!--Navbar-->    
+        <?php
+        include 'navbar.php';
+        ?>
+
+        <!--Sign Up Form-->
+        <form method="post" action="signUpPost.php" onSubmit="return validateForm()" name="signUpForm">
             <table>
-            <tr>
-              <th style="width: 50%"><img src="img/pestbusters.jpg" style="width: 75%;"></th>
-              <th></th>
-              <th></th>
-            </tr>
-            
-            <tr>
-                <td colspan="3"><small id="errorMessage"><?php if(isset($takenMessage)){echo $takenMessage;} ?></small></td>
-            </tr>
-            
-            <form method="post" action="signUpPost.php" onSubmit="return validateForm()" name="signUpForm">
-            <tr>
-              <td colspan="3">
-                  <input type="text" class="form-control" name="user" id="email" placeholder="Username">
-                  <small id="usernameWarning">* Please enter your desired username</small>
-              </td>
-            </tr>
-            
-            <tr>
-              <td colspan="3">
-                  <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                  <small id="passwordWarning">* Please enter your desired password</small>
-              </td>
-            </tr>
-            
-            <tr>
-              <td colspan="3">
-                  <input type="password" class="form-control" name="confirmPassword" id="cPassword" placeholder="Confirm Password">
-                  <small id="cPasswordWarning">* The password does not match</small>
-              </td>
-            </tr>
-            
-            <tr>
-                <td colspan="3">
-                    <button type="submit" class="btn btn-primary" id="registerButton" >Register User</button>
-                </td>
-            </tr>
-            
-            </form>
-            
+                <tr>
+                  <th style="width: 50%"><img src="img/pestbusters.jpg" style="width: 75%;"></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+
+                <!--Message (if applicable)-->
+                <tr>
+                    <td colspan="3"><small id="errorMessage"><?php if(isset($message)){echo $message;} ?></small></td>
+                </tr>
+
+                <!--Username-->
+                <tr>
+                  <td colspan="3">
+                      <input type="text" class="form-control" name="user" id="username" placeholder="Username">
+                      <small id="usernameWarning">* Please enter your desired username</small>
+                  </td>
+                </tr>
+
+                <!--Password-->
+                <tr>
+                  <td colspan="3">
+                      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                      <small id="passwordWarning">* Please enter your desired password</small>
+                  </td>
+                </tr>
+
+                <!--Confirm Password-->
+                <tr>
+                  <td colspan="3">
+                      <input type="password" class="form-control" name="confirmPassword" id="cPassword" placeholder="Confirm Password">
+                      <small id="cPasswordWarning">* The password does not match</small>
+                  </td>
+                </tr>
+
+                <!--Register User-->
+                <tr>
+                    <td colspan="3">
+                        <button type="submit" class="btn btn-primary" id="registerButton" >Register User</button>
+                    </td>
+                </tr>
+                
           </table>
-        
-        
+        </form>
+
     </body>
 </html>
 
