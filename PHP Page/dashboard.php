@@ -34,6 +34,11 @@ if(!isset($_SESSION['currentUser'])){
               <ul class="nav navbar-nav">
                   <li><a href="cameras.php"><span class="glyphicon glyphicon-camera"></span> Cameras</a></li>
                   <li class="active"><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                  <?php
+                    if($_SESSION['accountType'] == "superadmin"){
+                        echo '<li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Add users</a></li>';
+                    }
+                ?>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                   <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>

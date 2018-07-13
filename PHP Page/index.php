@@ -2,9 +2,11 @@
     include 'dbConnection.php';
     
     if(isset($_GET['exist'])){
-        $errorMessage = "The user does not exist in the system";
+        $message = "The user does not exist in the system";
     }else if(isset($_GET['registered'])){
-        $regMessage = "Account has been successfully registered";
+        $message = "Account has been successfully registered";
+    }else if(isset($_GET['credentials'])){
+        $message = "Please enter the correct username and password";
     }
 ?>
 
@@ -22,13 +24,11 @@
             <tr>
               <th style="width: 50%"><img src="img/pestbusters.jpg" style="width: 75%;"></th>
               <th></th>
-              <th style="float: right;">
-                  <a href="signUp.php"><button type="submit" class="btn btn-primary" id="signUpButton" name="signUp" style="background-color: white; border-color: white; color: black;" >Sign Up</button></a>
-                  <a href="login.php"><button type="submit" class="btn btn-primary" id="login" name="login" style="background-color: grey; border-color: grey; color: white;" >Login</button></a></th>
+              <th></th>
             </tr>
             
             <tr>
-                <td colspan="3"><small id="errorMessage"><?php if(isset($errorMessage)){echo $errorMessage;} if(isset($regMessage)){echo $regMessage;} ?></small></td>
+                <td colspan="3"><small id="errorMessage"><?php if(isset($message)){echo $message;} ?></small></td>
             </tr>
             
             <form method="post" action="loginPost.php" onSubmit="return validateForm()" name="loginForm">  
