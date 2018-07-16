@@ -32,7 +32,7 @@ $currentPage = "Dashboard";
         <!--Content-->
         <div class="container">
             <div class="row">
-                <p class="pageTitle">Dashboard</p>
+                <p class="pageTitle"><?php echo $currentPage ?></p>
                 <hr>
             </div>
             

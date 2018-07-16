@@ -7,7 +7,7 @@
         <a class="navbar-brand" href="#">Pestbusters</a>
       </div>
       <ul class="nav navbar-nav">
-        <li <?php if ($currentPage === 'Cameras') {echo 'class="active"';} ?>><a href="#"><span class="glyphicon glyphicon-camera"></span> Cameras</a></li>
+        <li <?php if ($currentPage === 'Cameras') {echo 'class="active"';} ?>><a href="cameras.php"><span class="glyphicon glyphicon-camera"></span> Cameras</a></li>
         <li <?php if ($currentPage === 'Dashboard') {echo 'class="active"';} ?>><a href="dashboard.php"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
         <?php
             if($_SESSION['accountType'] == "superadmin"){

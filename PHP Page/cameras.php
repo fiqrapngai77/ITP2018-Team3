@@ -29,18 +29,20 @@ $currentPage = "Cameras";
         <!--Content-->
         <div class="container">
             <div class="row">
-                <p class="pageTitle">Cameras</p>
+                <p class="pageTitle"><?php echo $currentPage ?></p>
                 
                 <hr>
             </div>
             
             <!--Table showing all the cameras-->
             <div class="row">
+                <a href="addCamera.php"><button type="submit" class="btn btn-success">Add Camera</button></a>
                 <table class="table table-hover">
                     <thead>
                       <tr>
                         <th>Camera Name</th>
                         <th>Location</th>
+                        <th></th>
                         <th></th>
                       </tr>
                     </thead>
@@ -54,17 +56,24 @@ $currentPage = "Cameras";
                                 ?>
 
                                 <tr>
-                                    <td><?php echo $row["cameraID"] ?></td>
+                                    <td><?php echo $row["cameraName"] ?></td>
                                     <td><?php echo $row["location"] ?></td>
 
                                     <?php $state = $row["state"]; 
                                     $cameraID = $row["cameraID"]?>
                                     
                                     <!--Button to start analysis-->
-                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                        <td><button type="submit" name="camera" value="<?php echo $cameraID?>" id="<?php echo $cameraID?>" class="btn btn-success" <?php if($state == 1){echo "disabled='true'";}?>>Start</button></td>
-                                    </form>
-
+                                    
+                                    <td>
+                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"><button type="submit" style="float: right;" name="camera" value="<?php echo $cameraID?>" id="start<?php echo $cameraID?>" class="btn btn-success" <?php if($state == 1){echo "disabled='true'";}?>>Start</button></form>
+                                    </td>
+                                    <td>
+                                        <!--Edit Button-->
+                                        <a href="editCamera.php?cameraID=<?php echo $cameraID ?>"><button type="submit" name="edit" value="<?php echo $cameraID?>" id="edit<?php echo $cameraID?>" class="btn btn-warning">Edit</button></a>
+                                         
+                                        <!--Delete Button-->
+                                        <a href="deleteCamera.php?cameraID=<?php echo $cameraID ?>"><button type="submit" name="delete" value="<?php echo $cameraID?>" id="edit<?php echo $cameraID?>" class="btn btn-danger">Delete</button></a>
+                                    </td>
 
                                 </tr>
                                 <?php
@@ -82,10 +91,11 @@ $currentPage = "Cameras";
     
     <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-        $cameraID = $_REQUEST['camera'];
-        $sql2 = "UPDATE cameradetails SET state = 1 WHERE cameraID = $cameraID";
-        $result = $conn->query($sql2);           
-        echo "<script type='text/javascript'>document.getElementById(String($cameraID)).disabled = true;</script>";
+            
+            $cameraID = $_REQUEST['camera'];
+            $sql2 = "UPDATE cameradetails SET state = 1 WHERE cameraID = $cameraID";
+            $result = $conn->query($sql2);           
+            echo "<script type='text/javascript'>document.getElementById(String($cameraID)).disabled = true;</script>";
+                                
     } ?>
 </html>
