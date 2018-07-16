@@ -45,7 +45,7 @@ $currentPage = "Edit Cameras";
                 while($row = $retrieveResult->fetch_assoc()) {?>
             
             <!--Edit Camera Form-->
-            <form method="post" onSubmit="return validateForm()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" name="editCameraForm">
+            <form method="post" onSubmit="return validateForm()" action="editCameraPost.php" name="editCameraForm">
                 <table>
                     <!--Message (if applicable)-->
                     <tr>
@@ -94,17 +94,6 @@ $currentPage = "Edit Cameras";
         </div>
         
     </body>
-    
-    <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $newCameraID = $_POST['cameraID'];
-            $newCameraName = $_POST['cameraName'];
-            $newLocation = $_POST['location'];
-            $updateQuery = "UPDATE cameradetails SET cameraName = '$newCameraName', location = '$newLocation' WHERE cameraID = '$newCameraID'";
-            $result = $conn->query($updateQuery);
-            
-            echo $newCameraID, $newCameraName, $newLocation;
-            
-            header("Location: cameras.php");
-    } ?>
+   
+
 </html>
