@@ -1,0 +1,26 @@
+<annotation>
+	<folder>big</folder>
+	<filename>phorid flies_188.jpg</filename>
+	<path>C:\Users\legac\Desktop\dlImages\phorid flies\filtered\big\phorid flies_188.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>413</width>
+		<height>457</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>phorid fly</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>15</xmin>
+			<ymin>4</ymin>
+			<xmax>367</xmax>
+			<ymax>457</ymax>
+		</bndbox>
+	</object>
+</annotation>

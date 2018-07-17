@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flesh flies_label</folder>
+	<filename>flesh flies_272.jpg</filename>
+	<path>C:\Users\Jia Min\Downloads\chromedriver_win32\flesh flies_label\flesh flies_272.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>849</width>
+		<height>1084</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>flesh fly</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>161</xmin>
+			<ymin>280</ymin>
+			<xmax>602</xmax>
+			<ymax>612</ymax>
+		</bndbox>
+	</object>
+</annotation>

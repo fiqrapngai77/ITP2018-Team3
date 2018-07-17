@@ -1,0 +1,26 @@
+<annotation>
+	<folder>green bottled flies</folder>
+	<filename>green bottles flies_399.jpg</filename>
+	<path>C:\Users\legac\Desktop\ITP2018-Team3\Images to be trained\green bottled flies\green bottles flies_399.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>720</width>
+		<height>609</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>green bottles fly</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>93</xmin>
+			<ymin>40</ymin>
+			<xmax>657</xmax>
+			<ymax>497</ymax>
+		</bndbox>
+	</object>
+</annotation>

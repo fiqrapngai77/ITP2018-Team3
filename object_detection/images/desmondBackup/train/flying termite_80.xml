@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flying termite</folder>
+	<filename>flying termite_80.png</filename>
+	<path>C:\Users\legac\Desktop\dlImages\flying termite\flying termite_80.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>450</width>
+		<height>300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>251</xmin>
+			<ymin>73</ymin>
+			<xmax>432</xmax>
+			<ymax>270</ymax>
+		</bndbox>
+	</object>
+</annotation>

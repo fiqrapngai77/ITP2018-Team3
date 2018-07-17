@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>20180518_150800 - Copy.jpg</filename>
+	<path>C:\tensorflow2\models\research\object_detection\images\test\20180518_150800 - Copy.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>698</width>
+		<height>931</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>house fly</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>461</xmin>
+			<ymin>127</ymin>
+			<xmax>585</xmax>
+			<ymax>304</ymax>
+		</bndbox>
+	</object>
+</annotation>
