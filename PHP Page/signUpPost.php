@@ -4,7 +4,11 @@ include 'dbConnection.php';
 $username = $_POST['user'];
 $password = $_POST['password'];
 $verifCode = generateRandomString(15);
-
+if(isset($_POST['privilege']) == "admin"){
+    $accountType = "superadmin";
+}else{
+    $accountType = "normal";
+}
 $existQuery = "SELECT * FROM users WHERE user='$username'";
 $existResult = $conn->query($existQuery);
 
@@ -14,12 +18,12 @@ if ($existResult->num_rows > 0){
 }
 
 
-$query = "INSERT INTO users (user, password, verifCode, accountType) VALUES ('$username','$password','$verifCode','Normal')" ;
+$query = "INSERT INTO users (user, password, verifCode, accountType) VALUES ('$username','$password','$verifCode','$accountType')" ;
 $result = $conn->query($query);
 
 //If the entry is successful, it will redirect to Register page with a message
 if($result){
-    header("Location: signup.php?registered=true");
+    header("Location: manageUser.php?registered=true");
 }else{
     header("Location: signup.php");
 }

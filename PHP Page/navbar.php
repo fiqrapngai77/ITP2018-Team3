@@ -15,7 +15,7 @@
                 if ($currentPage === 'Register') {
                     echo ' class="active" ';
                 }
-                echo'><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Add users</a></li>';
+                echo'><a href="manageUser.php"><span class="glyphicon glyphicon-user"></span> Manage Users</a></li>';
             }
         ?>
       </ul>

@@ -3,8 +3,6 @@
    
     if(isset($_GET['taken'])){
         $message = "The username is already taken";
-    }else if(isset($_GET['registered'])){
-        $message = "User has been successfully registered";
     }
     
     if(!isset($_SESSION['currentUser'])){
@@ -42,10 +40,7 @@
                   <th></th>
                 </tr>
 
-                <!--Message (if applicable)-->
-                <tr>
-                    <td colspan="3"><small id="errorMessage"><?php if(isset($message)){echo $message;} ?></small></td>
-                </tr>
+                
 
                 <!--Username-->
                 <tr>
@@ -69,6 +64,13 @@
                       <input type="password" class="form-control" name="confirmPassword" id="cPassword" placeholder="Confirm Password">
                       <small id="cPasswordWarning">* The password does not match</small>
                   </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3">
+                        <input type="checkbox" name="privilege" id="privilege" value="admin">
+                        <label for="privilege">Admin privileges?</label>
+                    </td>
                 </tr>
 
                 <!--Register User-->
