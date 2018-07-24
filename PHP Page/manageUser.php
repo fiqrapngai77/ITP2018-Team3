@@ -10,7 +10,11 @@ if(isset($_GET['registered'])){
         $message = "User has been successfully registered";
 }
 
+<<<<<<< HEAD
 $currentPage = "User Management";
+=======
+$currentPage = "Users Management";
+>>>>>>> 81f4c7d68c10e5c9cb000965d01af5f458bc39b9
 
 ?>
 <!DOCTYPE html>
@@ -20,7 +24,11 @@ $currentPage = "User Management";
         <meta charset="utf-8">
         <meta http-equiv="refresh" content="300">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<<<<<<< HEAD
         <link rel="stylesheet" type="text/css" href="css/mainStyleSheet.css">
+=======
+        <link rel="stylesheet" type="text/css" href="css/camerasStyleSheet.css">
+>>>>>>> 81f4c7d68c10e5c9cb000965d01af5f458bc39b9
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
@@ -42,17 +50,29 @@ $currentPage = "User Management";
             <!--Table showing all the cameras-->
             <div class="row">
                 <a href="signUp.php"><button type="submit" class="btn btn-success">Add User</button></a>
+<<<<<<< HEAD
                 <br><br>
                 <!--Message (if applicable)-->
                 <small id="errorMessage"><?php if(isset($message)){echo $message;} ?></small>
                 
                 <table class="table table-striped table-bordered" style="width:100%">
+=======
+                <br>
+                <!--Message (if applicable)-->
+                <small id="errorMessage"><?php if(isset($message)){echo $message;} ?></small>
+                
+                <table class="table table-hover">
+>>>>>>> 81f4c7d68c10e5c9cb000965d01af5f458bc39b9
                                         
                     <thead>
                       <tr>
                         <th>User ID</th>
                         <th>Account Name</th>
+<<<<<<< HEAD
                         <th>Actions</th>
+=======
+                        <th></th>
+>>>>>>> 81f4c7d68c10e5c9cb000965d01af5f458bc39b9
                       </tr>
                     </thead>
                     <tbody>

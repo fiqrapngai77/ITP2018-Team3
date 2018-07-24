@@ -1,0 +1,98 @@
+<annotation>
+	<folder>train</folder>
+	<filename>image_part_004.jpg</filename>
+	<path>C:\tensorflow2\models\research\object_detection\images\train\image_part_004.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2087</width>
+		<height>1174</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>546</xmin>
+			<ymin>589</ymin>
+			<xmax>624</xmax>
+			<ymax>712</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>522</xmin>
+			<ymin>870</ymin>
+			<xmax>584</xmax>
+			<ymax>990</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>593</xmin>
+			<ymin>983</ymin>
+			<xmax>692</xmax>
+			<ymax>1090</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>664</xmin>
+			<ymin>989</ymin>
+			<xmax>746</xmax>
+			<ymax>1094</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>843</xmin>
+			<ymin>1019</ymin>
+			<xmax>899</xmax>
+			<ymax>1120</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>868</xmin>
+			<ymin>959</ymin>
+			<xmax>1047</xmax>
+			<ymax>1083</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1527</xmin>
+			<ymin>266</ymin>
+			<xmax>1630</xmax>
+			<ymax>352</ymax>
+		</bndbox>
+	</object>
+</annotation>

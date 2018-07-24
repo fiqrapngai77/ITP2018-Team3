@@ -1,0 +1,24 @@
+item {
+  id: 1
+  name: 'flying termite'
+}
+
+item {
+  id: 2
+  name: 'phorid fly'
+}
+
+item {
+  id: 3
+  name: 'flesh fly'
+}
+
+item {
+  id: 4
+  name: 'green bottles fly'
+}
+
+item {
+  id: 5
+  name: 'house fly'
+}

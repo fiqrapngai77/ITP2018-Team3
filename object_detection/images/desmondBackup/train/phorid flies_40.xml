@@ -1,0 +1,26 @@
+<annotation>
+	<folder>phorid flies</folder>
+	<filename>phorid flies_40.jpg</filename>
+	<path>C:\Users\legac\Desktop\dlImages\phorid flies\phorid flies_40.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>380</width>
+		<height>255</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>phorid fly</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>62</xmin>
+			<ymin>11</ymin>
+			<xmax>327</xmax>
+			<ymax>219</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/ITPProject2/loginPost.php</file>
             <file>file:/C:/xampp/htdocs/ITPProject2/signUpPost.php</file>
             <file>file:/C:/xampp/htdocs/ITPProject2/addCamera.php</file>
@@ -13,6 +14,9 @@
             <file>file:/C:/xampp/htdocs/ITPProject2/signUp.php</file>
             <file>file:/C:/xampp/htdocs/ITPProject2/cameras.php</file>
             <file>file:/C:/xampp/htdocs/ITPProject2/navbar.php</file>
+=======
+            <file>file:/C:/xampp/htdocs/ITPProject2/index.php</file>
+>>>>>>> 81f4c7d68c10e5c9cb000965d01af5f458bc39b9
         </group>
     </open-files>
 </project-private>

@@ -6,8 +6,11 @@ if(!isset($_SESSION['currentUser'])){
     
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 81f4c7d68c10e5c9cb000965d01af5f458bc39b9
 $ID = $_GET['ID'];
 
 $deleteQuery = "DELETE FROM users WHERE ID = '$ID'";

@@ -1,0 +1,86 @@
+<annotation>
+	<folder>train</folder>
+	<filename>image_part_004 (2).jpg</filename>
+	<path>C:\tensorflow2\models\research\object_detection\images\train\image_part_004 (2).jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2087</width>
+		<height>1174</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>202</xmin>
+			<ymin>297</ymin>
+			<xmax>314</xmax>
+			<ymax>374</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1266</xmin>
+			<ymin>951</ymin>
+			<xmax>1324</xmax>
+			<ymax>1052</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>869</xmin>
+			<ymin>955</ymin>
+			<xmax>1037</xmax>
+			<ymax>1077</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>677</xmin>
+			<ymin>1002</ymin>
+			<xmax>765</xmax>
+			<ymax>1100</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>577</xmin>
+			<ymin>983</ymin>
+			<xmax>688</xmax>
+			<ymax>1105</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>flying termite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1776</xmin>
+			<ymin>756</ymin>
+			<xmax>1870</xmax>
+			<ymax>862</ymax>
+		</bndbox>
+	</object>
+</annotation>
