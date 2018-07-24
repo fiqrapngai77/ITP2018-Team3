@@ -1,6 +1,6 @@
-#usernameWarning, #passwordWarning, #cPasswordWarning {
+#usernameWarning, #passwordWarning, #cPasswordWarning ,#shortPasswordWarning {
     color: red;
-    visibility: hidden;
+    display: none;
 }
 
 small {
@@ -23,13 +23,8 @@ table {
     
 }
 
-table, th, td {
-    /*border: 1px solid black;*/
-}
-
 th, td {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 #registerButton{

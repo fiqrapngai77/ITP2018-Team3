@@ -15,7 +15,7 @@ $currentPage = "Dashboard";
         <title>Dashboard</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/camerasStyleSheet.css">
+        <link rel="stylesheet" type="text/css" href="css/mainStyleSheet.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="javascript/dashboardJS.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -91,11 +91,13 @@ $currentPage = "Dashboard";
                       
                         $name = test_input($_POST["name"]);    
                             
-                        $sql2 = "select COALESCE(houseFlies, 0 ) houseFlies , COALESCE(fleshFlies, 0 ) fleshFlies , COALESCE(greenBottlesFlies, 0 ) greenBottlesFlies , "
+                        $sql2 = "select id, COALESCE(houseFlies, 0 ) houseFlies , COALESCE(fleshFlies, 0 ) fleshFlies , COALESCE(greenBottlesFlies, 0 ) greenBottlesFlies , "
                                 . "COALESCE(phoridOrHumpbackedFlies, 0 ) phoridOrHumpbackedFlies , COALESCE(flyingTermites, 0 ) flyingTermites, date, "
                                 . "( COALESCE(houseFlies, 0 ) + COALESCE(fleshFlies, 0 ) + COALESCE(greenBottlesFlies, 0 )  + COALESCE(phoridOrHumpbackedFlies, 0 ) + COALESCE(flyingTermites, 0 )) total "
                                 . "from fliesdetail "
-                                . "where companyName='$name'";
+                                . "where companyName='$name' AND date IS NOT NULL "
+                                . "order by id asc";
+                                
                         $result = $conn->query($sql2);
 
 

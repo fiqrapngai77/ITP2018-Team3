@@ -10,22 +10,28 @@ function validateForm(){
     var cPassword = document.forms["signUpForm"]["cPassword"].value;
     
     var flag = 0;
-    document.getElementById("usernameWarning").style.visibility = "hidden";
-    document.getElementById("passwordWarning").style.visibility = "hidden";
-    document.getElementById("cPasswordWarning").style.visibility = "hidden";
+    document.getElementById("usernameWarning").style.display = "none";
+    document.getElementById("passwordWarning").style.display = "none";
+    document.getElementById("cPasswordWarning").style.display = "none";
+    document.getElementById("shortPasswordWarning").style.display = "none";
     
     if(user == ""){
-        document.getElementById("usernameWarning").style.visibility = "visible";
+        document.getElementById("usernameWarning").style.display = "block";
         flag = 1;
     }
     
     if(password == ""){
-        document.getElementById("passwordWarning").style.visibility = "visible";
+        document.getElementById("passwordWarning").style.display = "block";
         flag = 1;
+    } 
+    
+    if(password.length <8){
+        document.getElementById("shortPasswordWarning").style.display = "block";
+        flag=1;
     }
     
     if(cPassword != password){
-        document.getElementById("cPasswordWarning").style.visibility = "visible";
+        document.getElementById("cPasswordWarning").style.display = "block";
         flag = 1;
     }
     

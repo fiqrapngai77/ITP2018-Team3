@@ -17,7 +17,7 @@ $currentPage = "Add Camera";
         <meta charset="utf-8">
         <meta http-equiv="refresh" content="300">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/editCameraStyleSheet.css">
+        <link rel="stylesheet" type="text/css" href="css/manageCameraStyleSheet.css">
         <script src="javascript/addCameraValidation.js"></script>
     </head>
     

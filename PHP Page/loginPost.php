@@ -2,9 +2,7 @@
 include 'dbConnection.php';
 
 $username = $_POST['user'];
-$password = $_POST['password'];
-
-
+$password = hash('sha256',$_POST['password']);
 
 $query = "SELECT * FROM users WHERE user = '$username'" ;
 $result = $conn->query($query);

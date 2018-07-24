@@ -3,8 +3,6 @@
    
     if(isset($_GET['taken'])){
         $message = "The username is already taken";
-    }else if(isset($_GET['registered'])){
-        $message = "User has been successfully registered";
     }
     
     if(!isset($_SESSION['currentUser'])){
@@ -15,7 +13,7 @@
         header("Location: cameras.php");
     }
     
-    $currentPage = "Register";
+    $currentPage = "User Management";
     
 ?>
 
@@ -42,16 +40,14 @@
                   <th></th>
                 </tr>
 
-                <!--Message (if applicable)-->
-                <tr>
-                    <td colspan="3"><small id="errorMessage"><?php if(isset($message)){echo $message;} ?></small></td>
-                </tr>
+                
 
                 <!--Username-->
                 <tr>
                   <td colspan="3">
                       <input type="text" class="form-control" name="user" id="username" placeholder="Username">
                       <small id="usernameWarning">* Please enter your desired username</small>
+                      <br>
                   </td>
                 </tr>
 
@@ -60,6 +56,8 @@
                   <td colspan="3">
                       <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                       <small id="passwordWarning">* Please enter your desired password</small>
+                      <small id="shortPasswordWarning">* Please enter at least 8 characters</small>
+                      <br>
                   </td>
                 </tr>
 
@@ -68,7 +66,15 @@
                   <td colspan="3">
                       <input type="password" class="form-control" name="confirmPassword" id="cPassword" placeholder="Confirm Password">
                       <small id="cPasswordWarning">* The password does not match</small>
+                      <br>
                   </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3">
+                        <input type="checkbox" name="privilege" id="privilege" value="admin">
+                        <label for="privilege">Admin privileges?</label>
+                    </td>
                 </tr>
 
                 <!--Register User-->

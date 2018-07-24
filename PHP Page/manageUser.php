@@ -6,20 +6,23 @@ if(!isset($_SESSION['currentUser'])){
     
 }
 
-$currentPage = "Cameras";
+if(isset($_GET['registered'])){
+        $message = "User has been successfully registered";
+}
+
+$currentPage = "User Management";
 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cameras</title>
+        <title>Users Management</title>
         <meta charset="utf-8">
         <meta http-equiv="refresh" content="300">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/mainStyleSheet.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="javascript/camerasJS.js"></script>
     </head>
     
     <body>
@@ -38,43 +41,36 @@ $currentPage = "Cameras";
             
             <!--Table showing all the cameras-->
             <div class="row">
-                <a href="addCamera.php"><button type="submit" class="btn btn-success">Add Camera</button></a>
+                <a href="signUp.php"><button type="submit" class="btn btn-success">Add User</button></a>
                 <br><br>
+                <!--Message (if applicable)-->
+                <small id="errorMessage"><?php if(isset($message)){echo $message;} ?></small>
+                
                 <table class="table table-striped table-bordered" style="width:100%">
+                                        
                     <thead>
                       <tr>
-                        <th>Camera Name</th>
-                        <th>Location</th>
+                        <th>User ID</th>
+                        <th>Account Name</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php
-                        $cameraQuery = "SELECT * FROM cameradetails";
-                        $result = $conn->query($cameraQuery);
+                        $userQuery = "SELECT * FROM users WHERE accountType != 'superadmin' ";
+                        $result = $conn->query($userQuery);
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while ($row = $result->fetch_assoc()) {
-                                $state = $row["state"]; 
-                                $cameraID = $row["cameraID"];
-                                $cameraName = $row["cameraName"];
-                                $location = $row["location"];
+                                $id = $row['ID'];
+                                $name = $row['user'];
                                 ?>
 
-                                <tr id="<?php echo $cameraID?>" >
-                                    <td><?php echo  $cameraName?></td>
-                                    <td><?php echo  $location?></td>
-
-                                    
-                                    
-                                    <!--Button to start analysis-->
-                                    
+                                <tr id="<?php echo $id?>" >
+                                    <td><?php echo  $id?></td>
+                                    <td><?php echo  $name?></td>
                                     
                                     <td>
-                                        
-                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"><button type="submit" style="float: left; margin-right: 5px;" name="camera" value="<?php echo $cameraID?>" id="<?php echo $cameraID?>" class="btn btn-success" <?php if($state == 1){echo "disabled='true'";}?>>Start</button></form>
-                                        <!--Edit Button-->
-                                        <a href="editCamera.php?cameraID=<?php echo $cameraID ?>"><button type="submit" name="edit" value="<?php echo $cameraID?>" id="edit<?php echo $cameraID?>" class="btn btn-warning">Edit</button></a>
                                    
                                         <!--Delete Button-->
                                         <button class="btn btn-danger remove">Delete</button>
@@ -92,36 +88,28 @@ $currentPage = "Cameras";
         
     </body>
     
-    <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            
-            $cameraID = $_REQUEST['camera'];
-            $sql2 = "UPDATE cameradetails SET state = 1 WHERE cameraID = $cameraID";
-            $result = $conn->query($sql2);           
-            echo "<script type='text/javascript'>document.getElementById(String($cameraID)).disabled = true;</script>";
-                                
-    } ?>
-    
-    <script>
+    <script type="text/javascript">
         $(".remove").click(function(){
             var id = $(this).parents("tr").attr("id");
 
 
-            if(confirm('Are you sure you want to remove this camera?'))
+            if(confirm('Are you sure you want to remove this user from the system?'))
             {
                 $.ajax({
-                   url: 'deleteCamera.php',
+                   url: 'deleteUser.php',
                    type: 'GET',
-                   data: {cameraID: id},
+                   data: {ID: id},
                    error: function() {
                         alert('Something is wrong');
                    },
                    success: function() {
                         $("#"+id).remove();
-                        alert("Camera successfully removed");  
+                        alert("User successfully removed");  
                    }
                 });
             }
         });
+
+
     </script>
 </html>
