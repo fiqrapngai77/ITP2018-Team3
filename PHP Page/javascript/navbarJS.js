@@ -6,6 +6,7 @@
 
 $(document).ready(function(){
   $('.js-logout').on('click', function(){
-    window.location =  "index.php";
+    url = window.location.href;
+    window.location =  url + "/logout.php";
   });
 });

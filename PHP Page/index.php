@@ -5,6 +5,10 @@
         $message = "The user does not exist in the system";
     }else if(isset($_GET['credentials'])){
         $message = "Please enter the correct username and password";
+    }else if(isset($_GET['forgotPassword'])){
+        $message = "Your request for a change of password has been sent to the administrator";
+    }else if(isset($_GET['verified'])){
+        $message = "Your account has not been verified, please check your email for the link";
     }
 ?>
 
@@ -22,7 +26,7 @@
         <form method="post" action="loginPost.php" onSubmit="return validateForm()" name="loginForm">  
             <table>
             <tr>
-              <th style="width: 50%"><img src="img/pestbusters.jpg" style="width: 75%;"></th>
+              <th><img src="img/pestbusters.jpg" style="width: 75%;"></th>
               <th></th>
               <th></th>
             </tr>
@@ -60,7 +64,11 @@
             <!--Forgot Password option-->
             <tr>
                 <td colspan="3">
-                    <small>Forgot password?</small>
+                    <a href="forgotPassword.php"><small>Forgot password?</small></a>
+                </td>
+                
+                <td colspan="3">
+                    <a href="emailTest.php"><small>Email Test</small></a>
                 </td>
             </tr>
             

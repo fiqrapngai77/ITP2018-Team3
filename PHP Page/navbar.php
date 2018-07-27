@@ -2,9 +2,11 @@
 <!--The PHP inside the li components activates if the corresponding currentPage is the same-->
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/navbarStyleSheet.css">
 <script type="text/javascript" src="javascript/navbarJS.js"></script>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Pestbusters</a>
@@ -23,28 +25,33 @@
         ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="#" data-toggle="modal" data-target="#logoutModal"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <?php
+            $countQuery = "SELECT COUNT(*) as total FROM requests";
+            $countResult = $conn->query($countQuery);
+            $data = $countResult->fetch_assoc();
+            $total = $data['total'];
+          ?>
+          <li>
+              <a class="dropdown-toggle" data-toggle="dropdown" href='#'>
+                <span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['currentUser']; if ($total!=0 && $_SESSION['accountType'] == "superadmin"){echo " (".$total.")";}?><span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                  <li><a href="changePassword.php">Change Password</a></li>
+                  <?php
+                  
+                    if($_SESSION['accountType'] == "superadmin"){
+                        echo "<li><a href='notifications.php'>Notifications ";
+                        if($total!=0){
+                            echo "(".$total.")";  
+                        }
+                          
+                        echo "</a></li>";
+                    }
+                ?>
+                  <li><a href="logout.php">Log out</a></li>
+              </ul>
+          
       </ul>
     </div> 
 </nav>
-
-<!-- Small modal -->
-<div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <img src="img/pestbusters.jpg" style="width: 30%">
-        <h4>Log Out <i class="fa fa-lock"></i></h4>
-      </div>
-      <div class="modal-body">
-        <p><i class="fa fa-question-circle"></i> Are you sure you want to log-out from the system? <br /></p>
-        <div class="actionsBtns">
-            <button class="btn btn-default btn-primary js-logout" data-dismiss="modal" >Log out</button>
-            <button class="btn btn-default" data-dismiss="modal">Cancel</button>            
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 

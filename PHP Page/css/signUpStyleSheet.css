@@ -1,4 +1,4 @@
-#usernameWarning, #passwordWarning, #cPasswordWarning ,#shortPasswordWarning {
+.errorMsg {
     color: red;
     display: none;
 }

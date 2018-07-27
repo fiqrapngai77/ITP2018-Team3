@@ -8,11 +8,11 @@ if(!isset($_SESSION['currentUser'])){
 
 $ID = $_GET['ID'];
 
-$deleteQuery = "DELETE FROM users WHERE ID = '$ID'";
+$deleteQuery = "DELETE FROM requests WHERE username = '$ID'";
 
 //Debug code
 //$deleteQuery = "DELETE FROM users WHERE ID != '1'";
 
 $conn->query($deleteQuery);
 
-header("Location: manageUser.php");
+header("Location: notifications.php");

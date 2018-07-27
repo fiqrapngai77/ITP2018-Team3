@@ -12,20 +12,19 @@ body {
     background-size: cover;
 }
 
-table {
-    
-    width: 30%;
-    position: absolute;
-    top: 20%;
-    left: 35%
-    
+
+table{
+    bottom: 50%;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+td {
+    padding: 5px;
+    text-align: left;
 }
 
 
-th, td {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
 
 #loginButton {
     background-color: green;

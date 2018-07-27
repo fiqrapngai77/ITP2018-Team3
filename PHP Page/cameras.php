@@ -19,10 +19,7 @@ $currentPage = "Cameras";
         <link rel="stylesheet" type="text/css" href="css/mainStyleSheet.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<<<<<<< HEAD
         <script type="text/javascript" src="javascript/camerasJS.js"></script>
-=======
->>>>>>> 81f4c7d68c10e5c9cb000965d01af5f458bc39b9
     </head>
     
     <body>
@@ -104,12 +101,7 @@ $currentPage = "Cameras";
             echo "<script type='text/javascript'>document.getElementById(String($cameraID)).disabled = true;</script>";
                                 
     } ?>
-    
-<<<<<<< HEAD
-    <script>
-=======
     <script type="text/javascript">
->>>>>>> 81f4c7d68c10e5c9cb000965d01af5f458bc39b9
         $(".remove").click(function(){
             var id = $(this).parents("tr").attr("id");
 
@@ -130,10 +122,5 @@ $currentPage = "Cameras";
                 });
             }
         });
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 81f4c7d68c10e5c9cb000965d01af5f458bc39b9
     </script>
 </html>

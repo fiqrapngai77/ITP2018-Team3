@@ -2,7 +2,7 @@
 include 'dbConnection.php';
 
 if(!isset($_SESSION['currentUser'])){
-    exit(header("Location: index.php?user=false"));
+    header("Location: index.php?user=false");
     
 }
 
