@@ -17,10 +17,12 @@
 
 # Import packages
 import os
-import cv2
+##import cv2
+import numpy.core.multiarray
 import numpy as np
 import tensorflow as tf
 import sys
+from PIL import Image
 
 # This is needed since the notebook is stored in the object_detection folder.
 sys.path.append("..")
@@ -30,10 +32,11 @@ from utils import label_map_util
 from utils import visualization_utils as vis_util
 
 # Name of the directory containing the object detection module we're using
-MODEL_NAME = "inference_graph"
+MODEL_NAME = 'inference_graph'
 #IMAGE_NAME = 'test1.jpg'
-##IMAGE_NAME = "C:\\Users\\legac\\Desktop\\testimage\\testing0.jpg"
-IMAGE_NAME = "final.jpg"
+##IMAGE_NAME = 'testing0.jpg'
+IMAGE_NAME = "/home/pi/Desktop/startup/final.jpg"
+
 # Grab path to current working directory
 CWD_PATH = os.getcwd()
 SAVE_PATH = CWD_PATH + "\\IMAGE\\"
@@ -50,7 +53,7 @@ PATH_TO_IMAGE = os.path.join(CWD_PATH,IMAGE_NAME)
 
 # Number of classes the object detector can identify
 NUM_CLASSES = 6
-
+print("here")
 # Load the label map.
 # Label maps map indices to category names, so that when our convolution
 # network predicts `5`, we know that this corresponds to `king`.
@@ -91,7 +94,13 @@ num_detections = detection_graph.get_tensor_by_name('num_detections:0')
 # Load image using OpenCV and
 # expand image dimensions to have shape: [1, None, None, 3]
 # i.e. a single-column array, where each item in the column has the pixel RGB value
-image = cv2.imread(PATH_TO_IMAGE)
+##image = cv2.imread(PATH_TO_IMAGE)
+pil_image = Image.open(PATH_TO_IMAGE).convert('RGB')
+open_cv_image = np.array(pil_image)
+image = open_cv_image[:, :, ::-1].copy() 
+
+
+
 image_expanded = np.expand_dims(image, axis=0)
 
 # Perform the actual detection by running the model with the image as input
@@ -112,14 +121,16 @@ vis_util.visualize_boxes_and_labels_on_image_array(
     min_score_thresh=0.80)
 
 # All the results have been drawn on image. Now display the image.
-cv2.imshow('Object detector', image)
+##cv2.imshow('Object detector', image)
 
 FINAL_PATH = SAVE_PATH + IMAGE_NAME
 
-if not os.path.exists(SAVE_PATH):
-    os.makedirs(SAVE_PATH)
+##if not os.path.exists(SAVE_PATH):
+##    os.makedirs(SAVE_PATH)
 
-cv2.imwrite(FINAL_PATH ,image)
+insect_dict = {}
+
+##cv2.imwrite(FINAL_PATH ,image)
 print ("Output here")
 totalCountofObjects = [category_index.get(value) for index,value in enumerate(classes[0]) if scores[0,index] > 0.8 ]
 print(len(totalCountofObjects))
@@ -128,13 +139,27 @@ for index,value in enumerate(classes[0]):
     if scores[0,index] > 0.8:
         for dictKey, dictValue in category_index.items() :
             if dictKey == value:
-                print (dictValue.get("name"))
+                key = (dictValue.get("name"))
+
+                if key in insect_dict:
+                    insect_dict[key] += 1
+                else:
+                    insect_dict[key] = 1
        #print (value, index)
        #print (scores[0,index])
-print ("------------")
+
+file = open("/home/pi/Desktop/startup/result.txt", "w")
+
+for k,v in insect_dict.items():
+    print(str(k) + " : " + str(v))
+    file.write(str(k) + ":" + str(v) + "\n")
+
+print("Wrote to file")
+
+file.close()
 
 # Press any key to close the image
-cv2.waitKey(0)
+##cv2.waitKey(0)
 
 # Clean up
-cv2.destroyAllWindows()
+##cv2.destroyAllWindows()
